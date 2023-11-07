@@ -1,0 +1,14 @@
+vector<int> gradingStudents(vector<int> grades) {
+    vector<int> ans;
+    for(int i=0;i<grades.size();i++){
+        int val = grades[i]/5;
+        int g =  (val+1)*5;
+        int diff = abs(g-grades[i]);
+        if(diff<3&&grades[i]>35){
+            ans.push_back(g);
+        }else{
+            ans.push_back(grades[i]);
+        }
+    }
+    return ans;
+}
