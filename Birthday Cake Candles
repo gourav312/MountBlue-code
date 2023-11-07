@@ -1,0 +1,15 @@
+int birthdayCakeCandles(vector<int> candles) {
+    unordered_map<int ,int >  track;
+    int first = 0;
+    int ans =0;
+    for(int i=0;i<candles.size();i++){
+        track[candles[i]]++;
+    }
+    for(auto it:track){
+        if(it.second >ans){
+            ans = it.second;
+            first = it.first;
+        }
+    }
+    return ans;
+}
